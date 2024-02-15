@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petición AJAX</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="../js/102indicator.js"></script>
+    <!--    <script type="text/javascript" src="../js/102datos.js"></script> -->
+    <script type="text/javascript" src="../js/scripts.js"></script>
+</head>
+
+<body>
+    <main id="indexContent">
+        <h1>Web del Gobierno Vasco donde se puedan ver indicadores sobre vehículos, turismos y taxis</h1>
+        <header>
+            <a href="../index.html">
+                <img src="../img/f-logo-gv.png" alt="Logo de GV-EJ" />
+            </a>
+            <nav id="mainNav">
+                <ul>
+                    <ul>
+                        <li><a href="102indicator.html" class="seleccionada">Vehículos</a></li>
+                        <li><a href="158indicator.html">Turismos</a></li>
+                        <li><a href="103indicator.html">Taxis</a></li>
+                    </ul>
+            </nav>
+            <button onclick="idioma()">
+                <img id="imglang" src="../img/idioma.png" alt="IDIOMA" />
+            </button>
+        </header>
+        <hr>
+        <table>
+            <tr>
+                <td>
+                    <canvas id="48000" width="400" height="200"></canvas>
+                </td>
+                <td>
+                    <canvas id="01000" width="400" height="200"></canvas>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <canvas id="20000" width="400" height="200"></canvas>
+                </td>
+                <td>
+                    <canvas id="00000" width="400" height="200"></canvas>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <p id="resumen">El parque de vehículos de una comarca está constituido por todos los vehículos con motor
+            matriculados en los municipios de la comarca, excepto ciclomotores y vehículos especiales. De este modo,
+            se incluye todas las matriculaciones que haya habido durante todos los años menos las bajas producidas y
+            las modificaciones debidas por las reformas, tales como cambios de potencia, de utilización, etc.</p>
+        <p id="definicion">    Los valores mostrados son el total de vehículos entre el total de habitantes de la comarca (o territorio en
+            los gráficos).
+        </p>
+
+        <hr>
+        <!--1.1 PETICIONES AJAX A TRAVÉS DE FETCH - Listar vehículos 
+                <div id="intro">
+                    <p>VEHÍCULOS ( &nbsp; </p>
+                    <p id="desde"> </p>
+                    <p>&nbsp;a&nbsp; </p>
+                    <p id="hasta"> </p>
+                    <p>&nbsp;de&nbsp; </p>
+                    <p id="total"> </p>
+                    <p>&nbsp;)&nbsp;</p>
+                    <button id="siguientes" onclick="siguiente()">SIGUIENTES</button>
+                </div>-->
+        <div id="intro">
+            <p>EVOLUCIÓN DEL NÚMERO DE VEHÍCULOS POR CADA UNA DE LAS COMARCAS (</p>
+            <p id="total"></p>
+            <p>)</p>
+        </div>
+        <div id="vehiculos"></div>
+        <hr>
+</body>
+</main>
+
+</html>
